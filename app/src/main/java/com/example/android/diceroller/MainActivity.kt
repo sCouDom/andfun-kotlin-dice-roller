@@ -17,13 +17,25 @@
 package com.example.android.diceroller
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+    fun rollDice() {
+        Toast.makeText(applicationContext, "Test", Toast.LENGTH_LONG).show()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val rollButton = findViewById<Button>(R.id.roll_button)
+        rollButton.setOnClickListener {
+            rollDice()
+        }
+
+
 
         // TODO (02) Use findViewById to get a reference to the button
         // and assign it to an immutable variable called rollButton
